@@ -1,49 +1,45 @@
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-int n, b, *arr;
+int n, b;
+int *a;
 
 void input() {
     cin >> n >> b;
-    arr = new int[n];
+    a = new int[n];
     for (int i = 0; i < n; i++) {
-        cin >> arr[i];
+        cin >> a[i];
     }
-
     return;
-}
-
-int getMax(int *arr, int start, int finish) {
-    int maximum = 0;
-    for (int i = start; i <= finish; i++) {
-        if (*(arr + i) > maximum) {
-            maximum = *(arr + i);
-        }
-    }
-
-    return maximum;
 }
 
 void solve() {
-    int res = -1;
+    int *maxPre = new int[n];
+    int *maxPos = new int[n];
 
-    for (int i = 1; i < n - 1; i++) {
-        int left = getMax(arr, 0, i-1) - arr[i];
-        int right = getMax(arr, i+1, n-1) - arr[i];
-        if (left >= b && right >= b) {
-            res = left + right;
+    maxPre[0] = a[0];
+    maxPos[n-1] = a[n - 1];
+    for (int i = 1; i < (n-1); i++) {
+        maxPre[i] = (a[i-1] > maxPre[i-1]) ? a[i-1] : maxPre[i-1];
+    }
+
+    for (int i = (n-2); i >= 1; i--) {
+        maxPos[i] = (a[i+1] > maxPos[i+1]) ? a[i+1] : maxPos[i+1];
+    }
+
+    int result = -1;
+    for (int i = 1; i < (n-1); i++) {
+        if ((maxPre[i] - a[i] >= b) && (maxPos[i] - a[i] >= b)) {
+            int tmp = maxPre[i] - a[i] + maxPos[i] - a[i];
+            result = (tmp > result) ? tmp : result;
         }
     }
-    cout << res;
-
-    return;
+    cout << result;
 }
 
-int main()
-{
+int main() {
     input();
     solve();
-
     return 0;
 }

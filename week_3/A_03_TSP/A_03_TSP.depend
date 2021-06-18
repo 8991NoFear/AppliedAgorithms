@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1603011061 source:c:\users\8991nofear\documents\20201\primary\ttud\codeblock-workspace\week_3\a_03_tsp\main.cpp
+	<iostream>
+	<bits/stdc++.h>
+

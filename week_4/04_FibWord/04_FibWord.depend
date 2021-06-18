@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1610531606 source:c:\users\8991nofear\documents\learning-spaces\primary\ttud\codeblock-workspace\week_4\04_fibword\main.cpp
+	<iostream>
+	<bits/stdc++.h>
+

@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1602994037 source:c:\users\8991nofear\documents\20201\primary\ttud\codeblock-workspace\week_3\b_03_knapsac\main.cpp
+	<iostream>
+
+1604328016 source:c:\users\8991nofear\documents\learning-spaces\primary\ttud\codeblock-workspace\week_3\b_03_knapsac\main.cpp
+	<iostream>
+	<bits/stdc++.h>
+
